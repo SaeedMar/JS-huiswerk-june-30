@@ -12,12 +12,12 @@
 
 
 // ______________________opdracht oplossing _______________________
-// function getEmailDomain1 (email){
-// const positionNumber = email.indexOf('@')
-//     const emailDomain = email.substring(positionNumber + 1);
-// return emailDomain;
-// }
-// console.log(getEmailDomain1('hello@gmail.com'));
+function getEmailDomain1 (email){
+const positionNumber = email.indexOf('@')
+    const emailDomain = email.substring(positionNumber + 1);
+return emailDomain;
+}
+console.log(getEmailDomain1('hello@gmail.com'));
 
 // _________________________eind-code__________________________________
 /* Opdracht  2 */
@@ -33,24 +33,24 @@
 
 
 // __________________________ code hier begint_________________________
-// function typeOfEmail (email){
-//   const domain = getEmailDomain(email);
-//   if (domain === "novi-education.nl"){
-//       return "Student";
-//   }
-//   else if (domain === "novi.nl"){
-//       return "Medewerker"
-//   }
-//     else {
-//         return "Extern";
-//   }
-// }
-// function getEmailDomain (email){
-//     const positionOfAt = email.indexOf('@');
-//     return email.substring(positionOfAt + 1);
-// }
-//
-// console.log(typeOfEmail('a.wiersma@novi.nl'));
+function typeOfEmail (email){
+  const domain = getEmailDomain(email);
+  if (domain === "novi-education.nl"){
+      return "Student";
+  }
+  else if (domain === "novi.nl"){
+      return "Medewerker"
+  }
+    else {
+        return "Extern";
+  }
+}
+function getEmailDomain (email){
+    const positionOfAt = email.indexOf('@');
+    return email.substring(positionOfAt + 1);
+}
+
+console.log(typeOfEmail('a.wiersma@novi.nl'));
 
 // ---------------------------einde-code------------------
 /* Opdracht  3 */
@@ -73,26 +73,28 @@
 // ------------------------beginCode----------------------------
 
 function checkEmailValidity (email) {
-    if(email.indexOf('@') === -1){
+    if (email.indexOf('@') === -1) {
         return false;
     }
-    if (email.includes(',') ){
+    if (email.includes(',')) {
         return false;
     }
     const lastLetter = email.slice(-1);
-    if (lastLetter === '.'){
+    if (lastLetter === '.') {
         return false;
     }
     const theAtPosition = email.indexOf('@');
-    const afterAtPosition = email.substring(theAtPosition + 1 );
-    if (afterAtPosition.includes('.')) {
+    const afterAtPosition = email.substring(theAtPosition + 1);
+    if (afterAtPosition.indexOf('.') === -1) {
         return false;
     }
     return true;
 }
 
-onsole.log(checkEmailValidity("n.eeken@novi.nl")); // Verwachte uitkomst: true
-console.log(checkEmailValidity("tessmellink@novi.nl")); // Verwachte uitkomst: true
-console.log(checkEmailValidity("n.eekenanovi.nl")); // Verwachte uitkomst: false
-console.log(checkEmailValidity("n.eeken@novinl.")); // Verwachte uitkomst: false
-console.log(checkEmailValidity("tessmellink@novi,nl")); // Verwachte uitkomst: false
+
+
+console.log(checkEmailValidity("n.eeken@novi.nl"));
+console.log(checkEmailValidity("tessmellink@novi.nl"));
+console.log(checkEmailValidity("n.eekenanovi.nl"));
+console.log(checkEmailValidity("n.eeken@novinl."));
+console.log(checkEmailValidity("tessmellink@novi,nl"));

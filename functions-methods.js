@@ -12,12 +12,7 @@
 
 
 // ______________________opdracht oplossing _______________________
-function getEmailDomain1 (email){
-const positionNumber = email.indexOf('@')
-    const emailDomain = email.substring(positionNumber + 1);
-return emailDomain;
-}
-console.log(getEmailDomain1('hello@gmail.com'));
+
 
 // _________________________eind-code__________________________________
 /* Opdracht  2 */
